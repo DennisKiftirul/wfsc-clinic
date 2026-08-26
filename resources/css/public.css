@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "DIN Pro";
+    src: url("/fonts/din-pro/dinpro.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DIN Pro";
+    src: url("/fonts/din-pro/dinpro_medium.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DIN Pro";
+    src: url("/fonts/din-pro/dinpro_bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DIN Pro";
+    src: url("/fonts/din-pro/dinpro_black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --font-sans: "DIN Pro", ui-sans-serif, system-ui, sans-serif;
+    
+    /* Tambahan Warna Khas Logo WFSC */
+    --color-wfsc-coral: #FF5252;
+    --color-wfsc-dark: #2A2B2E;
+    --color-wfsc-soft: #FFF8F8;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: "DIN Pro", ui-sans-serif, system-ui, sans-serif;
+        color: var(--color-wfsc-dark);
+    }
+}
+
+@layer components {
+    .public-nav-link {
+        @apply text-sm font-medium text-white/90 transition-all duration-300 hover:text-white hover:opacity-100 relative py-1;
+    }
+
+    .public-nav-cta {
+        @apply border border-white/80 text-white transition-all duration-300 hover:bg-white hover:text-neutral-900 hover:shadow-lg active:scale-95;
+    }
+
+    /* Efek Saat Navbar Di-scroll */
+    #public-navbar.is-scrolled {
+        @apply bg-white/90 text-neutral-900 shadow-sm backdrop-blur-xl border-b border-neutral-100;
+    }
+
+    #public-navbar.is-scrolled .public-nav-link {
+        @apply text-neutral-700 hover:text-[#FF5252];
+    }
+
+    #public-navbar.is-scrolled .public-nav-cta {
+        @apply border-[#FF5252] bg-[#FF5252] text-white hover:bg-[#e04545] hover:border-[#e04545];
+    }
+}
+
+.public-page-light #public-navbar {
+    background-color: white;
+    color: #171717;
+}
+
+.public-page-light #public-navbar.is-scrolled {
+    background-color: white;
+    color: #171717;
+}
+
+.public-page-light #public-navbar {
+    background-color: white;
+    color: #171717;
+}
+
+.public-page-light #public-navbar .public-nav-link {
+    @apply text-neutral-700 hover:text-[#FF5252];
+}
+
+.public-page-light #public-navbar .public-nav-cta {
+    @apply border-[#FF5252] bg-[#FF5252] text-white hover:bg-[#e04545] hover:border-[#e04545];
+}
+
+.public-page-light #public-navbar.is-scrolled {
+    background-color: white;
+    color: #171717;
+}
+
